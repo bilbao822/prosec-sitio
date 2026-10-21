@@ -1,0 +1,9 @@
+# Archivo de configuracion para Netlify (otros hostings lo ignoran).
+# PUBLICACION PROVISIONAL: la primera regla pide a Google NO mostrar esta direccion de prueba.
+# IMPORTANTE: quitar la linea "X-Robots-Tag: noindex" cuando el sitio se conecte a prosecie.com.
+/*
+  X-Robots-Tag: noindex
+  X-Content-Type-Options: nosniff
+
+/img/*
+  Cache-Control: public, max-age=2592000
