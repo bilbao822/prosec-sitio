@@ -337,3 +337,6 @@ footer a:hover{color:#fff}
 .redes a[href*="facebook.com"]{background:#1877f2}
 .redes a[href*="instagram.com"]:hover,.redes a[href*="facebook.com"]:hover{color:#fff;filter:brightness(1.1);transform:translateY(-1px)}
 .redes a:focus-visible{outline:2px solid var(--azul-3);outline-offset:2px}
+/* Fotos de los frentes sin espacios en blanco */
+.minis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.minis img{width:100%;height:auto;max-width:none;aspect-ratio:3/4;object-fit:cover}
