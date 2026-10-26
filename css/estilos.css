@@ -321,3 +321,19 @@ footer a:hover{color:#fff}
 @media (max-width:900px){.tips-lista{grid-template-columns:minmax(0,1fr)}}
 .redes-menu{display:none}
 @media (max-width:900px){.nav .redes-menu{display:flex;padding-top:12px;gap:10px}.nav .redes-menu a{padding:0;border:1px solid var(--linea);font-size:inherit}}
+
+/* Caso Cartagena */
+.caso-ctg{margin-bottom:26px}
+.caso-ctg>figure img{object-position:50% 55%}
+.ctg-fotos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;border-top:1px solid var(--linea);padding:clamp(22px,3vw,38px) clamp(24px,3.4vw,44px) clamp(24px,3.4vw,44px)}
+.ctg-fotos figure{margin:0;display:grid;gap:8px;min-width:0;align-content:start}
+.ctg-fotos img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ctg-fotos img.ctg-alto{object-position:50% 38%}
+.ctg-fotos figcaption{font-size:.9rem;color:var(--gris)}
+@media (max-width:900px){.ctg-fotos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Redes con color de marca */
+.redes a[href*="instagram.com"],.redes a[href*="facebook.com"]{color:#fff;border-color:transparent}
+.redes a[href*="instagram.com"]{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.redes a[href*="facebook.com"]{background:#1877f2}
+.redes a[href*="instagram.com"]:hover,.redes a[href*="facebook.com"]:hover{color:#fff;filter:brightness(1.1);transform:translateY(-1px)}
+.redes a:focus-visible{outline:2px solid var(--azul-3);outline-offset:2px}
