@@ -346,3 +346,12 @@ footer a:hover{color:#fff}
 .sm-tres .ctg-fotos{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:900px){.sm-tres .ctg-fotos{grid-template-columns:repeat(2,minmax(0,1fr))}.sm-tres .ctg-fotos figure:last-child{grid-column:1/-1}.sm-tres .ctg-fotos figure:last-child img{aspect-ratio:16/10}}
 @media (min-width:1081px){.casos.dos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Franja de clientes con logos */
+.clientes{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.clientes .wrap{display:block;text-align:center;padding-block:clamp(30px,4vw,46px)}
+.clientes-t{color:var(--gris)}
+.clientes-t::after{content:"";display:block;width:44px;height:3px;background:var(--azul-2);margin:12px auto 0}
+.clientes ul.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:26px 36px;margin-top:26px}
+.logos li{display:flex;align-items:center;justify-content:center;height:70px}
+.logos img{height:var(--h,52px);width:auto;max-width:210px;object-fit:contain}
+@media (max-width:620px){.clientes ul.logos{gap:22px 30px}.logos li{height:48px}.logos img{height:calc(var(--h,52px)*.66);max-width:140px}}
