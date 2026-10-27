@@ -342,3 +342,7 @@ footer a:hover{color:#fff}
 .minis img{width:100%;height:auto;max-width:none;aspect-ratio:3/4;object-fit:cover}
 /* Casos sin foto principal: fotos verticales */
 .sm-fotos .ctg-fotos img{aspect-ratio:3/4;object-position:50% 40%}
+/* Fotos sin andamios: ajustes de casos */
+.sm-tres .ctg-fotos{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.sm-tres .ctg-fotos{grid-template-columns:repeat(2,minmax(0,1fr))}.sm-tres .ctg-fotos figure:last-child{grid-column:1/-1}.sm-tres .ctg-fotos figure:last-child img{aspect-ratio:16/10}}
+@media (min-width:1081px){.casos.dos{grid-template-columns:repeat(2,minmax(0,1fr))}}
