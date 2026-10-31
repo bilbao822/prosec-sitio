@@ -44,8 +44,8 @@ prosec-web/
 ## Formulario de cotización
 
 - **Enviar solicitud:** registra la solicitud en **Netlify Forms** (`name="cotizacion"`, `data-netlify="true"`, campo trampa antispam `sitio-web`). Solo funciona con el sitio publicado en Netlify y la detección de formularios activada; las notificaciones se configuran en Netlify > Forms para `gerencia@prosecie.com`.
-- **Enviar por WhatsApp:** abre WhatsApp (+57 313 593 1258) con la solicitud redactada.
-- Si el registro falla, la página lo avisa y ofrece WhatsApp o copiar el texto.
+- **Enviar desde mi correo:** abre el programa de correo del visitante con la solicitud redactada para gerencia@prosecie.com.
+- Si el registro falla, la página lo avisa y ofrece copiar el texto para enviarlo por correo.
 - **Estado:** aún no se ha comprobado con un envío real en Netlify.
 
 ## Publicación
@@ -64,6 +64,6 @@ prosec-web/
 
 ## Contacto
 
-PROSEC Ingeniería Estructural S.A.S. · NIT 901.498.882 · 313 593 1258 · gerencia@prosecie.com
+PROSEC Ingeniería Estructural S.A.S. · NIT 901.498.882 · gerencia@prosecie.com · Cra. 10 # 5-18, corregimiento La Playa, Barranquilla
 
 © PROSEC Ingeniería Estructural S.A.S. Todos los derechos reservados.
