@@ -33,7 +33,7 @@
   visor.addEventListener('click',function(e){if(e.target===visor){cerrar();}});
   visor.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')mover(-1);if(e.key==='ArrowRight')mover(1);});
 
-  // Solicitud de cotización: redacta el mensaje y lo abre en WhatsApp o en el correo del visitante.
+  // Solicitud de cotización: envía la solicitud o la abre en el correo del visitante.
   var form=$('#form-cotizacion'),aviso=$('#form-aviso'),texto=$('#aviso-texto'),caja=$('#aviso-mensaje'),copiar=$('#aviso-copiar');
   function decir(t,conMensaje){texto.textContent=t;aviso.hidden=false;caja.hidden=!conMensaje;copiar.hidden=!conMensaje;}
   function valor(id){return $('#'+id).value.trim()}
@@ -51,9 +51,9 @@
     var mensaje=lineas.join('\n');
     caja.value=mensaje;
     if(via==='formulario'){
-      // Envía la solicitud por FormSubmit (formsubmit.co) al correo gerencia@prosecie.com. Si no se puede, ofrece WhatsApp o copiar el texto.
+      // Envía la solicitud por FormSubmit (formsubmit.co) al correo gerencia@prosecie.com. Si no se puede, ofrece copiar el texto.
       var boton=e.submitter||$('button[data-via="formulario"]',form);
-      var fallo=function(){boton.disabled=false;decir('No pudimos registrar la solicitud en este momento. Envíela por WhatsApp al 313 593 1258 o copie este texto y envíelo a gerencia@prosecie.com.',true);};
+      var fallo=function(){boton.disabled=false;decir('No pudimos registrar la solicitud en este momento. Copie este texto y envíelo a gerencia@prosecie.com.',true);};
       if(!window.fetch||!window.FormData){fallo();return;}
       var datos={};new FormData(form).forEach(function(v,k){datos[k]=v;});
       if(datos._honey){return;}
@@ -63,18 +63,14 @@
         .then(function(r){return r.json().catch(function(){return {};}).then(function(d){
           if(!r.ok||String(d.success)!=='true'){fallo();return;}
           boton.disabled=false;form.reset();
-          decir('Solicitud enviada. Gracias; le responderemos al teléfono o correo que nos indicó.',false);
+          decir('Solicitud enviada. Gracias; le responderemos a los datos de contacto que nos indicó.',false);
         });},fallo);
       return;
     }
-    var url=via==='correo'
-      ?'mailto:gerencia@prosecie.com?subject='+encodeURIComponent('Solicitud de cotización - '+valor('f-servicio'))+'&body='+encodeURIComponent(mensaje)
-      :'https://wa.me/573135931258?text='+encodeURIComponent(mensaje);
-    var a=document.createElement('a');a.href=url;if(via!=='correo'){a.target='_blank';a.rel='noopener';}
+    var a=document.createElement('a');
+    a.href='mailto:gerencia@prosecie.com?subject='+encodeURIComponent('Solicitud de cotización - '+valor('f-servicio'))+'&body='+encodeURIComponent(mensaje);
     document.body.appendChild(a);a.click();a.remove();
-    decir(via==='correo'
-      ?'Se abrió su programa de correo con la solicitud redactada. Envíela desde allí. Si no se abrió, copie este texto y envíelo a gerencia@prosecie.com.'
-      :'Se abrió WhatsApp con la solicitud redactada. Presione enviar allí. Si no se abrió, copie este texto y envíelo al 313 593 1258.',true);
+    decir('Se abrió su programa de correo con la solicitud redactada. Envíela desde allí. Si no se abrió, copie este texto y envíelo a gerencia@prosecie.com.',true);
   });
   copiar.addEventListener('click',function(){
     var listo=function(){copiar.textContent='Texto copiado'};
