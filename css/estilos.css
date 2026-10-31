@@ -355,3 +355,21 @@ footer a:hover{color:#fff}
 .logos li{display:flex;align-items:center;justify-content:center;height:70px}
 .logos img{height:var(--h,52px);width:auto;max-width:210px;object-fit:contain}
 @media (max-width:620px){.clientes ul.logos{gap:22px 30px}.logos li{height:48px}.logos img{height:calc(var(--h,52px)*.66);max-width:140px}}
+/* Páginas de servicio por ciudad */
+.pag-portada .wrap{padding-block:clamp(56px,8vw,112px) clamp(56px,8vw,104px)}
+.pag-portada h1{font-size:clamp(2rem,4.4vw,3.1rem)}
+.migas{font-size:.86rem;color:var(--claro)}
+.migas a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5)}
+.pag-dos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,72px)}
+.pag-dos .cabeza{margin-bottom:22px}
+.pag-lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.pag-lista li{padding:14px 0;border-bottom:1px solid var(--linea);color:var(--gris)}
+.pag-lista b{color:var(--tinta);font-weight:650}
+.pag-pasos{margin:0;padding-left:1.3em;display:grid;gap:12px;color:var(--gris)}
+.pag-pasos li::marker{color:var(--azul-3);font-weight:700}
+.pag-p{color:var(--gris);font-size:1.04rem;max-width:58ch}
+.pag-otras{margin-top:34px;color:var(--gris);display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline}
+.pag-cta{background:var(--niebla);border-top:1px solid var(--linea)}
+.pag-cta .portada-acciones .enlace{color:var(--azul-3)}
+.servicios-ciudad{margin-top:18px;color:var(--gris);display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline}
+@media (max-width:900px){.pag-dos{grid-template-columns:minmax(0,1fr)}}
